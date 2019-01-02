@@ -19,7 +19,10 @@ network={
 if [ $(cat /proc/mounts | grep -c $PWD/boot) -gt 0 ]; then 
     cd boot
     sudo touch ssh
-    mv ../wpa_supplicant.conf .
+    mv -f ../wpa_supplicant.conf .
     cd ..
-    sudo umount boot
 fi
+
+for curr_path in $( df -h --output=source,target | grep ${ETCHER_DISK} | grep -o '\S*$'); do
+    sudo umount $curr_path
+done
