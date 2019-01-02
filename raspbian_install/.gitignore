@@ -1,1 +1,4 @@
 downloads
+boot
+.wifi_*
+wpa_supplicant.conf
