@@ -19,7 +19,7 @@ network={
 if [ $(cat /proc/mounts | grep -c $PWD/boot) -gt 0 ]; then 
     cd boot
     sudo touch ssh
-    mv -f ../wpa_supplicant.conf .
+    sudo mv -f ../wpa_supplicant.conf .
     cd ..
 fi
 
